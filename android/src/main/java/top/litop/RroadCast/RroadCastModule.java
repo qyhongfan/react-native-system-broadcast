@@ -8,8 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.IBinder;
-
-
+import android.net.Uri;
 import android.util.Log;
 import android.util.Printer;
 
@@ -30,6 +29,7 @@ import org.xmlpull.v1.XmlSerializer;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.File;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.List;
