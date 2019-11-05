@@ -141,6 +141,17 @@ public class RroadCastModule extends ReactContextBaseJavaModule {
 
         Intent intent = new Intent();
         intent.setAction(action);
+            Iterator<String> sIterator = jsonObject.keys();
+            while(sIterator.hasNext()) {
+                // 获得key
+                String key = sIterator.next();
+                if (key.equals("data")) {
+                    // 根据key获得value, value也可以是JSONObject,JSONArray,使用对应的参数接收即可
+                    String uri = jsonObject.getString(key);
+                    intent.setData(Uri.fromFile(new File(uri)));
+                }
+            }
+
         intent.putExtras(fromJson(jsonObject));
         getReactApplicationContext().sendBroadcast(intent);
     }
